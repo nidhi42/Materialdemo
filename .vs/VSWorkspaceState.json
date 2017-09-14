@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\autocomplete",
+    "\\src\\app\\checkbox",
+    "\\src\\app\\tabs",
+    "\\src\\assets",
+    "\\src\\assets\\img"
+  ],
+  "SelectedNode": "\\src\\app\\tabs\\tabs-simple.component.ts",
+  "PreviewInSolutionExplorer": false
+}

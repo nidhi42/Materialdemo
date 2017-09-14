@@ -1,0 +1,374 @@
+﻿<md-tab-group>
+  <md-tab>
+    <ng-template md-tab-label>
+      <md-icon>thumb_down</md-icon> Form Components
+    </ng-template>
+    <autocomplete-simple-example></autocomplete-simple-example>
+   
+  </md-tab>
+  <md-tab>
+    <ng-template md-tab-label>
+      <md-icon>thumb_down</md-icon>   Other Elements
+    </ng-template>
+ 
+    <h1>Menu Component</h1>
+    <button md-button [mdMenuTriggerFor]="menu">Home</button><button md-button [mdMenuTriggerFor]="menu">About Us</button><button md-button >Contact Us</button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>Item 1</button>
+      <button md-menu-item>Item 2</button>
+    </md-menu>
+    <h2>Sidebar nav</h2>
+    <md-sidenav-container class="example-sidenav-fab-container">
+      <md-sidenav #sidenav mode="side" opened="true">
+        <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+          <md-icon>add</md-icon>
+        </button>
+        <div class="example-scrolling-content">
+          Lorem ipsum dolor sit amet, pede a libero aenean phasellus, lectus metus sint ut risus,
+          fusce vel in pellentesque. Nisl rutrum etiam morbi consectetuer tempor magna, aenean nullam
+          nunc id, neque vivamus interdum sociis nulla scelerisque sem, dolor id wisi turpis magna
+          aliquam magna. Risus accumsan hac eget etiam donec sed, senectus erat mattis quam, tempor
+          vel urna occaecat cras, metus urna augue nec at. Et morbi amet dui praesent, nec eu at,
+          ligula ipsum dui sollicitudin, quis nisl massa viverra ligula, mauris fermentum orci arcu
+          enim fringilla. Arcu erat nulla in aenean lacinia ullamcorper, urna ante nam et sagittis,
+          tristique vehicula nibh ipsum vivamus, proin proin. Porta commodo nibh quis libero amet.
+          Taciti dui, sapien consectetuer.
+        </div>
+      </md-sidenav>
+      <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+        <md-icon>add</md-icon>
+      </button>
+      <div class="example-scrolling-content">
+        Lorem ipsum dolor sit amet, pede a libero aenean phasellus, lectus metus sint ut risus, fusce
+        vel in pellentesque. Nisl rutrum etiam morbi consectetuer tempor magna, aenean nullam nunc id,
+        neque vivamus interdum sociis nulla scelerisque sem, dolor id wisi turpis magna aliquam magna.
+        Risus accumsan hac eget etiam donec sed, senectus erat mattis quam, tempor vel urna occaecat
+        cras, metus urna augue nec at. Et morbi amet dui praesent, nec eu at, ligula ipsum dui
+        sollicitudin, quis nisl massa viverra ligula, mauris fermentum orci arcu enim fringilla. Arcu
+        erat nulla in aenean lacinia ullamcorper, urna ante nam et sagittis, tristique vehicula nibh
+        ipsum vivamus, proin proin. Porta commodo nibh quis libero amet. Taciti dui, sapien
+        consectetuer.
+      </div>
+    </md-sidenav-container>
+    <h1>Toolbar</h1>
+    <md-toolbar color="primary">
+      <span>First Row</span>
+
+      <md-toolbar-row >
+        <span>Second Row</span>
+      </md-toolbar-row>
+
+      <md-toolbar-row class="example-fill-remaining-space">
+        <span>Third Row</span>
+      </md-toolbar-row>
+    </md-toolbar>
+
+    <h1>List Component- Simple</h1>
+    <md-list>
+      <md-list-item> Pepper </md-list-item>
+      <md-list-item> Salt </md-list-item>
+      <md-list-item> Paprika </md-list-item>
+    </md-list>
+    <h1>List Component- Selectional</h1>
+    <md-selection-list #shoes>
+      <md-list-option *ngFor="let shoe of typesOfShoes">
+        {{shoe}}
+      </md-list-option>
+    </md-selection-list>
+    <h1>List Component- FolderList with section</h1>
+    <md-list>
+      <h3 mdSubheader>Folders</h3>
+      <md-list-item *ngFor="let folder of folders">
+        <md-icon mdListIcon>folder</md-icon>
+        <h4 mdLine>{{folder.name}}</h4>
+        <p mdLine class="demo-2"> {{folder.updated}} </p>
+      </md-list-item>
+      <md-divider></md-divider>
+      <h3 mdSubheader>Notes</h3>
+      <md-list-item *ngFor="let note of notes">
+        <md-icon mdListIcon>note</md-icon>
+        <h4 mdLine>{{note.name}}</h4>
+        <p mdLine class="demo-2"> {{note.updated}} </p>
+      </md-list-item>
+    </md-list>
+    <h1>Grid Component</h1>
+    <md-grid-list cols="2" rowHeight="2:1">
+      <md-grid-tile>1</md-grid-tile>
+      <md-grid-tile>2</md-grid-tile>
+      <md-grid-tile>3</md-grid-tile>
+      <md-grid-tile>4</md-grid-tile>
+    </md-grid-list>
+    <h1>Card Component</h1>
+    <md-card class="example-card">
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>Shiba Inu</md-card-title>
+        <md-card-subtitle>Dog Breed</md-card-subtitle>
+      </md-card-header>
+      <img md-card-image src="assets/img/shiba2.jpg" alt="Photo of a Shiba Inu">
+
+      <md-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button>LIKE</button>
+        <button md-button>SHARE</button>
+      </md-card-actions>
+    </md-card>
+    <h1>Simple Expansion Panel</h1>
+    <md-expansion-panel>
+      <md-expansion-panel-header>
+        <md-panel-title>
+          Personal data
+        </md-panel-title>
+        <md-panel-description>
+          Type your name and age
+        </md-panel-description>
+      </md-expansion-panel-header>
+
+      <md-form-field>
+        <input mdInput placeholder="First name">
+      </md-form-field>
+
+      <md-form-field>
+        <input mdInput placeholder="Age">
+      </md-form-field>
+    </md-expansion-panel>
+ <h1>Expansion panel with accordian</h1>
+    <md-accordion class="example-headers-align">
+      <md-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+        <md-expansion-panel-header>
+          <md-panel-title>
+            Personal data
+          </md-panel-title>
+          <md-panel-description>
+            Type your name and age
+            <md-icon>account_circle</md-icon>
+          </md-panel-description>
+        </md-expansion-panel-header>
+
+        <md-form-field>
+          <input mdInput placeholder="First name">
+        </md-form-field>
+
+        <md-form-field>
+          <input mdInput type="number" min="1" placeholder="Age">
+        </md-form-field>
+
+        <md-action-row>
+          <button md-button color="primary" (click)="nextStep()">Next</button>
+        </md-action-row>
+      </md-expansion-panel>
+
+      <md-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+        <md-expansion-panel-header>
+          <md-panel-title>
+            Destination
+          </md-panel-title>
+          <md-panel-description>
+            Type the country name
+            <md-icon>map</md-icon>
+          </md-panel-description>
+        </md-expansion-panel-header>
+
+        <md-form-field>
+          <input mdInput placeholder="Country">
+        </md-form-field>
+
+        <md-action-row>
+          <button md-button color="warn" (click)="prevStep()">Previous</button>
+          <button md-button color="primary" (click)="nextStep()">Next</button>
+        </md-action-row>
+      </md-expansion-panel>
+
+      <md-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+        <md-expansion-panel-header>
+          <md-panel-title>
+            Day of the trip
+          </md-panel-title>
+          <md-panel-description>
+            Inform the date you wish to travel
+            <md-icon>date_range</md-icon>
+          </md-panel-description>
+        </md-expansion-panel-header>
+
+        <md-form-field>
+          <input mdInput placeholder="Date" [mdDatepicker]="picker" (focus)="picker.open()" readonly>
+        </md-form-field>
+        <md-datepicker #picker></md-datepicker>
+
+        <md-action-row>
+          <button md-button color="warn" (click)="prevStep()">Previous</button>
+          <button md-button color="primary" (click)="nextStep()">End</button>
+        </md-action-row>
+      </md-expansion-panel>
+
+    </md-accordion>
+    <h1>Button Component</h1>
+    <button md-button>Click me!</button>
+    <h1>Buttontoggle Component</h1>
+    <md-button-toggle>Toggle me!</md-button-toggle>
+
+    <h1>chiplist Component</h1>
+    <md-chip-list class="mat-chip-list-stacked">
+      <md-chip *ngFor="let chipColor of availableColors"
+               selected="true"
+               color="{{chipColor.color}}">
+        {{chipColor.name}}
+      </md-chip>
+    </md-chip-list>
+    <h1>icon Component</h1>
+    <md-icon>home</md-icon>
+    <h1>progressbar Component</h1>
+    <md-card>
+      <md-card-content>
+        <h2 class="example-h2">Progress spinner configuration</h2>
+
+        <section class="example-section">
+          <label class="example-margin">Color:</label>
+          <md-radio-group [(ngModel)]="color">
+            <md-radio-button class="example-margin" value="primary">
+              Primary
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="accent">
+              Accent
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="warn">
+              Warn
+            </md-radio-button>
+          </md-radio-group>
+        </section>
+
+        <section class="example-section">
+          <label class="example-margin">Mode:</label>
+          <md-radio-group [(ngModel)]="mode">
+            <md-radio-button class="example-margin" value="determinate">
+              Determinate
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="indeterminate">
+              Indeterminate
+            </md-radio-button>
+          </md-radio-group>
+        </section>
+
+        <section class="example-section" *ngIf="mode == 'determinate'">
+          <label class="example-margin">Progress:</label>
+          <md-slider class="example-margin" [(ngModel)]="value"></md-slider>
+        </section>
+      </md-card-content>
+    </md-card>
+    <md-card>
+      <md-card-content>
+        <h2 class="example-h2">Result</h2>
+
+        <md-progress-spinner class="example-margin"
+                             [color]="color"
+                             [mode]="mode"
+                             [value]="value">
+        </md-progress-spinner>
+      </md-card-content>
+    </md-card>
+    <h1>horizontal porgress bar </h1>
+    <md-card>
+      <md-card-content>
+        <h2 class="example-h2">Progress bar configuration</h2>
+
+        <section class="example-section">
+          <label class="example-margin">Color:</label>
+          <md-radio-group [(ngModel)]="color">
+            <md-radio-button class="example-margin" value="primary">
+              Primary
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="accent">
+              Accent
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="warn">
+              Warn
+            </md-radio-button>
+          </md-radio-group>
+        </section>
+
+        <section class="example-section">
+          <label class="example-margin">Mode:</label>
+          <md-radio-group [(ngModel)]="mode">
+            <md-radio-button class="example-margin" value="determinate">
+              Determinate
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="indeterminate">
+              Indeterminate
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="buffer">
+              Buffer
+            </md-radio-button>
+            <md-radio-button class="example-margin" value="query">
+              Query
+            </md-radio-button>
+          </md-radio-group>
+        </section>
+
+        <section class="example-section" *ngIf="mode == 'determinate' || mode == 'buffer'">
+          <label class="example-margin">Progress:</label>
+          <md-slider class="example-margin" [(ngModel)]="value"></md-slider>
+        </section>
+        <section class="example-section" *ngIf="mode == 'buffer'">
+          <label class="example-margin">Buffer:</label>
+          <md-slider class="example-margin" [(ngModel)]="bufferValue"></md-slider>
+        </section>
+      </md-card-content>
+    </md-card>
+
+    <md-card>
+      <md-card-content>
+        <h2 class="example-h2">Result</h2>
+
+        <section class="example-section">
+          <md-progress-bar class="example-margin"
+                           [color]="color"
+                           [mode]="mode"
+                           [value]="value"
+                           [bufferValue]="bufferValue">
+          </md-progress-bar>
+        </section>
+      </md-card-content>
+      <h1>Dialogue</h1>
+      <ol>
+        <li>
+          <md-form-field>
+            <input mdInput [(ngModel)]="name" placeholder="What's your name?">
+          </md-form-field>
+        </li>
+        <li>
+          <button md-raised-button (click)="openDialog()">Pick one</button>
+        </li>
+        <li *ngIf="animal">
+          You chose: <i>{{animal}}</i>
+        </li>
+      </ol>
+    </md-card>
+    <h1>ToolTip</h1>
+    <span mdTooltip="Tooltip!" style="margin-bottom:60px;display:inline-block;">I have a tooltip</span>
+    <h1>snackbar</h1>
+    <button md-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+      Pizza party
+    </button>
+    <div class="example-container mat-elevation-z8">
+      <div class="example-container mat-elevation-z8">
+        <div class="example-header">
+          <md-form-field floatPlaceholder="never">
+            <input mdInput #filter placeholder="Filter users">
+          </md-form-field>
+        </div>
+      </div>
+    </div>
+    <h1>Table</h1>
+    <table-filtering-example>
+    </table-filtering-example>
+    <dialog-overview-example></dialog-overview-example>
+  </md-tab>
+ 
+
+</md-tab-group>
