@@ -1,47 +1,75 @@
-﻿
-<form class="example-form">
-  
-  <h1> Auto Complete Dropdown</h1>
-  <md-form-field class="example-full-width">
-    <input type="text" placeholder="Pick one" aria-label="Number" mdInput [formControl]="myControl" [mdAutocomplete]="auto">
-    <md-autocomplete #auto="mdAutocomplete">
-      <md-option *ngFor="let option of options" [value]="option">
-        {{ option }}
+﻿<!--AutoComplete Form  elements-->
+<!--AutoComplete header-->
+<div class="panel-header">
+  <md-panel-title class="panel-title">
+    Form Contents
+  </md-panel-title>
+</div>
+<!--AutoComplete panel-->
+<md-expansion-panel class="show-panel">
+  <form class="example-form">
+    <!--DatePicker elements-->
+    <div class="panel-contents">
+      <h1> Auto Complete Dropdown</h1>
+      <md-form-field class="example-full-width">
+        <input type="text" placeholder="Pick one" aria-label="Number" mdInput [formControl]="myControl" [mdAutocomplete]="auto">
+        <md-autocomplete #auto="mdAutocomplete">
+          <md-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </md-option>
+        </md-autocomplete>
+      </md-form-field>
+    </div>
+    <!--Checkbox   elements-->
+    <div class="panel-contents">
+      <h1>checkbox </h1>
+      <md-checkbox>Check me!</md-checkbox>
+    </div>
+    <!--DatePicker   elements-->
+    <div class="panel-contents">
+      <h1>datepicker</h1>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+        <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+        <md-datepicker #picker></md-datepicker>
+      </md-form-field>
+    </div>
+    <!--Simple Input elements-->
+    <div class="panel-contents">
+      <h1>input</h1>
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="Favorite food" value="Sushi">
+      </md-form-field>
+    </div>
+  </form>
+
+  <!--Radio Button elements-->
+  <div class="panel-contents">
+    <h1>radio button </h1>
+    <md-radio-group>
+      <md-radio-button value="1">Option 1</md-radio-button>
+      <md-radio-button value="2">Option 2</md-radio-button>
+    </md-radio-group>
+  </div>
+  <!--Select Component  elements-->
+  <div class="panel-contents">
+    <h1>select component</h1>
+    <md-select placeholder="Favorite food">
+      <md-option *ngFor="let food of foods" [value]="food.value">
+        {{ food.viewValue }}
       </md-option>
-    </md-autocomplete>
-  </md-form-field><br />
+    </md-select>
+  </div>
+  <!--Slider Component  elements-->
+  <div class="panel-contents">
+    <h1>Slider Component</h1>
+    <md-slider></md-slider>
+  </div>
+  <!--Switch Component  elements-->
+  <div class="panel-contents">
+    <h1>Switch Component</h1>
+    <md-slide-toggle>Slide me!</md-slide-toggle>
+  </div>
+</md-expansion-panel>
 
-  <h1>checkbox </h1>
-  <md-checkbox>Check me!</md-checkbox><br /><br />
-
-  <h1>datepicker</h1>
-  <md-form-field>
-    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-    <md-datepicker #picker></md-datepicker>
-  </md-form-field><br /><br />
-
-  <h1>input</h1>
-    <md-form-field class="example-full-width">
-      <input mdInput placeholder="Favorite food" value="Sushi">
-    </md-form-field>
-</form><br /><br />
-
-<h1>radio button </h1>
-<md-radio-group>
-  <md-radio-button value="1">Option 1</md-radio-button>
-  <md-radio-button value="2">Option 2</md-radio-button>
-</md-radio-group><br /><br />
-
-<h1>select component</h1>
-  <md-select placeholder="Favorite food">
-    <md-option *ngFor="let food of foods" [value]="food.value">
-      {{ food.viewValue }}
-    </md-option>
-  </md-select><br /><br />
-  <h1>Slider Component</h1>
-  <md-slider></md-slider>
-
-  <h1>Switch Component</h1>
-  <md-slide-toggle>Slide me!</md-slide-toggle>
 

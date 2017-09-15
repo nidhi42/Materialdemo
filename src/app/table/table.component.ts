@@ -14,7 +14,7 @@ import 'rxjs/add/observable/fromEvent';
  */
 @Component({
     selector: 'table-filtering-example',
-    templateUrl: 'table.component.html',
+    templateUrl: 'table.component.html'
 })
 export class TableFilteringExample {
     displayedColumns = ['userId', 'userName', 'progress', 'color'];

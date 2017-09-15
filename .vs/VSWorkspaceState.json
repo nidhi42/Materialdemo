@@ -4,11 +4,14 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\autocomplete",
-    "\\src\\app\\checkbox",
+    "\\src\\app\\css",
+    "\\src\\app\\dialogue",
+    "\\src\\app\\scss",
+    "\\src\\app\\table",
     "\\src\\app\\tabs",
     "\\src\\assets",
     "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\src\\app\\tabs\\tabs-simple.component.ts",
+  "SelectedNode": "\\src\\app\\dialogue\\dialogue-modal.component.css",
   "PreviewInSolutionExplorer": false
 }

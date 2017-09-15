@@ -1,4 +1,4 @@
-{
+﻿{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
     "name": "demoapp"
@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "app/css/app-style.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -51,7 +51,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "app/css/styles.css",
     "component": {}
   }
 }

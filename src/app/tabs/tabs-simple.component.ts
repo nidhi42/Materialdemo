@@ -3,9 +3,7 @@ import { MdSnackBar } from '@angular/material';
 @Component({
     selector: 'tabs-simple',
     templateUrl: 'tabs-simple.component.html',
-    encapsulation: ViewEncapsulation.None,
-  
-    styleUrls: ['tabs-simple.component.css'],
+    encapsulation: ViewEncapsulation.None
    
 })
 export class TabsSimpleComponent {
