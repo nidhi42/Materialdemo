@@ -135,7 +135,7 @@ body {
       .mat-drawer-container .custom-sidenav ul li:hover a:after {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1); }
-    .mat-drawer-container .custom-sidenav a.active:after {
+    .mat-drawer-container .custom-sidenav ul li a.active:after {
       -webkit-transform: scale3d(1, 1, 1);
       transform: scale3d(1, 1, 1); }
 
@@ -222,12 +222,19 @@ app-root {
   position: relative;
   top: 60px; }
 
-.custom-nav-container .mat-drawer-content {
-  margin-left: 240px !important; }
+.mat-drawer-opened .mat-drawer-content {
+  margin-left: 240px !important;
+  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  -moz-transition: 0.1s ease-in-out;
+  -o-transition: 0.1s ease-in-out; }
 
 .panel-contents .mat-drawer-content {
   margin-left: 0px !important;
   padding: 20px; }
+
+.panel-contents .md-panel-description {
+  color: #000 !important; }
 
 /* Structure */
 .mat-expansion-panel-content .mat-expansion-panel-body {
@@ -239,20 +246,15 @@ app-root {
 .mat-expansion-panel-header:not([aria-disabled=true]):hover {
   background: #2980b9 !important; }
 
-.panel-contents .md-panel-description {
-  color: #000 !important; }
-
 .mat-expansion-panel-header-description {
   color: #000; }
 
-.mat-expansion-panel-header-title:hover {
+.mat-expansion-panel-header:hover {
   color: #fff !important; }
-
-.mat-expansion-panel-header:hover .mat-expansion-panel-header-title {
-  color: #fff !important; }
-
-.mat-expansion-panel-header:hover .mat-expansion-panel-header-description {
-  color: #fff !important; }
+  .mat-expansion-panel-header:hover .mat-expansion-panel-header-title {
+    color: #fff !important; }
+  .mat-expansion-panel-header:hover .mat-expansion-panel-header-description {
+    color: #fff !important; }
 
 .example-container {
   display: flex;
@@ -266,17 +268,10 @@ app-root {
   padding-left: 24px;
   font-size: 20px; }
 
-.example-header {
-  min-height: 64px;
-  display: flex;
-  align-items: baseline;
-  padding: 8px 24px 0;
-  font-size: 20px;
-  justify-content: space-between; }
-
 .mat-form-field {
   font-size: 14px;
-  flex-grow: 1; }
+  flex-grow: 1;
+  margin-left: 0px; }
 
 .mat-table {
   overflow: auto;
@@ -301,9 +296,8 @@ md-grid-tile {
   height: 300px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   margin: 20px auto; }
-
-.example-sidenav-fab-container md-sidenav {
-  max-width: 200px; }
+  .example-sidenav-fab-container md-sidenav {
+    max-width: 200px; }
 
 .example-sidenav-fab-container .mat-sidenav-content,
 .example-sidenav-fab-container md-sidenav {
@@ -339,30 +333,6 @@ md-grid-tile {
 
 .example-margin {
   margin: 0 10px; }
-
-.example-header {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  padding-left: 24px;
-  font-size: 20px; }
-
-.example-header {
-  min-height: 64px;
-  display: flex;
-  align-items: baseline;
-  padding: 8px 24px 0;
-  font-size: 20px;
-  justify-content: space-between; }
-
-.mat-form-field {
-  font-size: 14px;
-  flex-grow: 1;
-  margin-left: 0px; }
-
-.mat-table {
-  overflow: auto;
-  max-height: 500px; }
 
 .mat-toolbar .mat-toolbar-row span {
   font-size: 14px; }

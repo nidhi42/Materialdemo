@@ -151,7 +151,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-
+//wrapper code
 .wrapper {
   width: 100%;
   max-width: 100%;
@@ -171,7 +171,6 @@ body {
     width: 240px;
     background: $theme-color;
     bottom: 0px;
-
     .social-icon {
       position: absolute;
       bottom: 80px;
@@ -210,45 +209,49 @@ body {
       }
     }
 
-    ul li a {
-      display: block;
-      padding: 15px 10px;
-      color: #bdc3c7;
-      text-decoration: none;
-      font-family: Verdana;
-      font-size: 14px;
-      line-height: 1.42857143;
-      position: relative;
+    ul {
+      li {
+        a {
+          display: block;
+          padding: 15px 10px;
+          color: #bdc3c7;
+          text-decoration: none;
+          font-family: Verdana;
+          font-size: 14px;
+          line-height: 1.42857143;
+          position: relative;
 
-      &:after {
-        position: absolute;
-        height: 100%;
-        width: 4px;
-        content: '';
-        left: 0;
-        bottom: 0;
-        background: #bdc3c7;
-        -webkit-transform: scale3d(0, 0, 1);
-        transform: scale3d(0, 0, 1);
-        transition: -webkit-transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-        transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-        transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), -webkit-transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-      }
-    }
+          &:after {
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            content: '';
+            left: 0;
+            bottom: 0;
+            background: #bdc3c7;
+            -webkit-transform: scale3d(0, 0, 1);
+            transform: scale3d(0, 0, 1);
+            transition: -webkit-transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), -webkit-transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+          }
+        }
 
-    ul li:hover {
-      background: rgba(0, 0, 0, 0.2);
+        &:hover {
+          background: rgba(0, 0, 0, 0.2);
 
-      a:after {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-      }
-    }
+          a:after {
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+          }
+        }
 
-    a.active {
-      &:after {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
+        a.active {
+          &:after {
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+          }
+        }
       }
     }
   }
@@ -368,20 +371,32 @@ app-root {
   top: 60px;
 }
 
-.custom-nav-container {
+.mat-drawer-opened {
   .mat-drawer-content {
     margin-left: 240px !important;
+    transition: 0.1s ease-in-out;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
   }
 }
 
-.panel-contents .mat-drawer-content {
-  margin-left: 0px !important;
-  padding: 20px;
+.panel-contents {
+  .mat-drawer-content {
+    margin-left: 0px !important;
+    padding: 20px;
+  }
+
+  .md-panel-description {
+    color: $black !important;
+  }
 }
 //component designs
 /* Structure */
-.mat-expansion-panel-content .mat-expansion-panel-body {
-  padding: 20px !important;
+.mat-expansion-panel-content {
+  .mat-expansion-panel-body {
+    padding: 20px !important;
+  }
 }
 
 .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
@@ -392,20 +407,14 @@ app-root {
   background: #2980b9 !important;
 }
 
-.panel-contents .md-panel-description {
-  color: $black !important;
-}
-
 .mat-expansion-panel-header-description {
   color: $black;
 }
 
-.mat-expansion-panel-header-title:hover {
-  color: $white !important;
-}
-
 .mat-expansion-panel-header {
   &:hover {
+    color: $white !important;
+
     .mat-expansion-panel-header-title {
       color: $white !important;
     }
@@ -430,18 +439,10 @@ app-root {
   font-size: 20px;
 }
 
-.example-header {
-  min-height: 64px;
-  display: flex;
-  align-items: baseline;
-  padding: 8px 24px 0;
-  font-size: 20px;
-  justify-content: space-between;
-}
-
 .mat-form-field {
   font-size: 14px;
   flex-grow: 1;
+  margin-left: 0px;
 }
 
 .mat-table {
@@ -472,10 +473,10 @@ md-grid-tile {
   height: 300px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   margin: 20px auto;
-}
 
-.example-sidenav-fab-container md-sidenav {
-  max-width: 200px;
+  md-sidenav {
+    max-width: 200px;
+  }
 }
 
 .example-sidenav-fab-container .mat-sidenav-content,
@@ -522,34 +523,6 @@ md-grid-tile {
   margin: 0 10px;
 }
 
-.example-header {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  padding-left: 24px;
-  font-size: 20px;
-}
-
-.example-header {
-  min-height: 64px;
-  display: flex;
-  align-items: baseline;
-  padding: 8px 24px 0;
-  font-size: 20px;
-  justify-content: space-between;
-}
-
-.mat-form-field {
-  font-size: 14px;
-  flex-grow: 1;
-  margin-left: 0px;
-}
-
-.mat-table {
-  overflow: auto;
-  max-height: 500px;
-}
-
 .mat-toolbar {
   .mat-toolbar-row {
     span {
@@ -589,7 +562,7 @@ md-grid-tile {
     }
   }
 }
-
+//media css for tablet screen
 @media(max-width:768px) {
   .panel-header {
     .panel-title {
@@ -606,7 +579,7 @@ md-grid-tile {
     }
   }
 }
-
+//media css for mobile screen
 @media(max-width:480px) {
   .panel-header {
     .panel-title {
@@ -623,19 +596,19 @@ md-grid-tile {
     }
   }
 }
-
+//media css for tablet screen
 @media(min-width:768px) {
   .wrapper {
     max-width: 740px;
   }
 }
-
+//media css for laptop screen
 @media(min-width:992px) {
   .wrapper {
     max-width: 960px;
   }
 }
-
+//media css for desktop screen
 @media(min-width:1200px) {
   .wrapper {
     max-width: 1170px;

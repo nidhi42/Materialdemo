@@ -10,7 +10,8 @@
       </button>
   </div>
 </md-toolbar>
-  <md-sidenav-container class="sidenav-container custom-nav-container">
+<!--Menu  elemets-->
+  <md-sidenav-container class="sidenav-container custom-nav-container mat-drawer-opened">
     <md-sidenav #sidenav class="sidenav custom-sidenav" opened="true">
       <ul>
         <li><a routerLink="/autocomplete" routerLinkActive="active">Form Components</a></li>
@@ -24,7 +25,8 @@
       </div>
     </md-sidenav>
     <div class="content-area">
+      <!--Routing  elemets-->
       <router-outlet></router-outlet>
     </div>
   </md-sidenav-container>
-<!--Routing  elemets-->
+
