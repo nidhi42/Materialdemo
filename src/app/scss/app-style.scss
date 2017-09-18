@@ -547,6 +547,9 @@ md-grid-tile {
 .mat-focused .mat-form-field-placeholder {
   color: $orange-color;
 }
+.mat-calendar-body-selected  {
+  background:$orange-color;
+}
 .mat-checkbox-checked, .mat-checkbox-indeterminate {
   &.mat-accent {
     .mat-checkbox-background {

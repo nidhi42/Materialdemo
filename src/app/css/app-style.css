@@ -350,6 +350,9 @@ md-grid-tile {
 .mat-focused .mat-form-field-placeholder {
   color: #ee6710; }
 
+.mat-calendar-body-selected {
+  background: #ee6710; }
+
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background: #ee6710; }
 
