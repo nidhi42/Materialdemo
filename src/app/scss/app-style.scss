@@ -1,4 +1,4 @@
-﻿//mixins
+//mixins
 // --------------------------------------------------
 // Flexbox SASS mixins
 // The spec: http://www.w3.org/TR/css3-flexbox
@@ -171,43 +171,7 @@ body {
     width: 240px;
     background: $theme-color;
     bottom: 0px;
-    .social-icon {
-      position: absolute;
-      bottom: 80px;
-      left: 0px;
-      right: 0px;
-      text-align: center;
-
-      .social-icon-content {
-        background: url(../../assets/img/sprites.png) no-repeat;
-        display: inline-block;
-
-        &.fb-icon {
-          background-position: -9px -8px;
-          width: 32px;
-          height: 32px;
-          margin-right: 20px;
-          cursor: pointer;
-
-          &:hover {
-            background: url(../../assets/img/sprites2.png) no-repeat;
-            background-position: -9px -8px;
-          }
-        }
-
-        &.twitter-icon {
-          background-position: -58px -9px;
-          width: 32px;
-          height: 32px;
-          cursor: pointer;
-
-          &:hover {
-            background: url(../../assets/img/sprites2.png) no-repeat;
-            background-position: -58px -9px;
-          }
-        }
-      }
-    }
+    padding-bottom: 60px;
 
     ul {
       li {
@@ -256,11 +220,39 @@ body {
     }
   }
 }
+.social-icon {
+ 
 
-.mat-drawer-backdrop {
-  visibility: hidden !important;
+  .social-icon-content {
+    background: url(../../assets/img/sprites.png) no-repeat;
+    display: inline-block;
+
+    &.fb-icon {
+      background-position: -9px -8px;
+      width: 32px;
+      height: 32px;
+      margin-right: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background: url(../../assets/img/sprites2.png) no-repeat;
+        background-position: -9px -8px;
+      }
+    }
+
+    &.twitter-icon {
+      background-position: -58px -9px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+
+      &:hover {
+        background: url(../../assets/img/sprites2.png) no-repeat;
+        background-position: -58px -9px;
+      }
+    }
+  }
 }
-
 .mat-toolbar {
   min-height: 59px !important;
   padding: 0px;
@@ -522,6 +514,7 @@ md-grid-tile {
   .mat-toolbar-row {
     span {
       font-size: 14px;
+      font-family:Verdana;
     }
   }
 }
@@ -617,6 +610,45 @@ mat-checkbox-anim-unchecked-checked .md-ink-ripple {
     background: $orange-color;
   }
 }
+//datatable css
+table {
+  display: table;
+  border: 1px solid rgba(black, 0.12);
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+
+  tr {
+    position: relative;
+    height: 36px;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  th,
+  td {
+    padding: 0 16px;
+    text-align: left;
+  }
+
+  td {
+    position: relative;
+    vertical-align: middle;
+    height: 36px;
+    border-top: 1px solid rgba(black, 0.12);
+    border-bottom: 1px solid rgba(black, 0.12);
+    box-sizing: border-box;
+    color: rgba(black, 0.87);
+  }
+}
+.mat-drawer-backdrop.mat-drawer-shown {
+  visibility:hidden !important;
+}
 //responsive
 @media(max-width:992px) {
   .panel-header {
@@ -633,6 +665,256 @@ mat-checkbox-anim-unchecked-checked .md-ink-ripple {
       margin-bottom: 25px;
     }
   }
+}
+//datepicker css
+$primary: #106cc8 !default;
+$warn: #f44336 !default;
+
+$md2-datepicker-trigger-height: 30px !default;
+$md2-datepicker-trigger-min-width: 168px !default;
+$md2-datepicker-arrow-size: 5px !default;
+$md2-datepicker-arrow-margin: 4px !default;
+$md2-datepicker-date-cell-size: 40px !default;
+$md2-datepicker-calendar-height: 280px !default;
+
+$md2-clock-size: 240px !default;
+
+md2-datepicker {
+  position: relative;
+  display: inline-block;
+  min-width: 175px;
+  outline: none;
+  backface-visibility: hidden;
+
+  &.md2-datepicker-disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.md2-datepicker-trigger {
+  display: block;
+  padding: 18px 0 4px 46px;
+  white-space: nowrap;
+}
+
+.md2-datepicker-button {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+  line-height: 24px;
+  color: rgba(black, 0.54);
+  fill: currentColor;
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  background: none;
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+
+  &:focus {
+    background-color: rgba(158, 158, 158, 0.2);
+  }
+
+  .md2-datepicker-disabled & {
+    color: rgba(black, 0.38);
+  }
+}
+
+.md2-datepicker-input {
+  color: rgba(black, 0.38);
+  border-bottom: 1px solid rgba(black, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $md2-datepicker-trigger-height;
+  min-width: $md2-datepicker-trigger-min-width;
+  line-height: 22px;
+  position: relative;
+  padding-right: 20px;
+  box-sizing: border-box;
+
+  [aria-disabled='true'] & {
+    background-image: linear-gradient(to right, rgba(black, 0.26) 0, rgba(black, 0.26) 33%, transparent 0);
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+    border-color: transparent;
+    background-position: 0 bottom;
+    cursor: default;
+    user-select: none;
+  }
+
+
+  &.md2-datepicker-input-focused {
+    color: $primary;
+    border-color: $primary;
+  }
+
+  md2-datepicker.ng-invalid.ng-touched:not(.md2-datepicker-disabled) & {
+    color: $warn;
+    border-color: $warn;
+  }
+}
+
+.md2-datepicker-placeholder {
+  position: absolute;
+  right: 18px;
+  bottom: 100%;
+  left: 0;
+  padding: 0 2px;
+  transform: translate3d(0, 26px, 0) scale(1);
+  transform-origin: left top;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  transition: all 150ms cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &.md2-floating-placeholder {
+    left: -2px;
+    text-align: left;
+    transform: translate3d(0, 6px, 0) scale(0.75);
+  }
+
+  [dir='rtl'] & {
+    right: 0;
+    left: 18px;
+    transform-origin: right top;
+
+    &.md2-floating-placeholder {
+      right: -2px;
+      text-align: right;
+    }
+  }
+
+  [aria-required=true] &::after {
+    content: '*';
+  }
+}
+
+.md2-datepicker-value {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  color: rgba(black, 0.87);
+  border: 0;
+  outline: none;
+  background: transparent;
+
+  .md2-datepicker-disabled & {
+    color: rgba(black, 0.38);
+  }
+
+  [dir='rtl'] & {
+    left: auto;
+    right: 0;
+  }
+}
+
+.md2-datepicker-arrow {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: $md2-datepicker-arrow-size solid transparent;
+  border-right: $md2-datepicker-arrow-size solid transparent;
+  border-top: $md2-datepicker-arrow-size solid;
+  margin: 0 $md2-datepicker-arrow-margin;
+  color: rgba(black, 0.38);
+
+  .md2-datepicker-input-focused & {
+    color: $primary;
+  }
+
+  md2-datepicker.ng-invalid.ng-touched:not(.md2-datepicker-disabled) & {
+    color: $warn;
+  }
+}
+
+.md2-calendar-years {
+  position: absolute;
+  top: 10px;
+  right: 100%;
+  bottom: 10px;
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 300ms;
+
+  &.active {
+    right: 0;
+  }
+
+  .md2-calendar-years-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+  }
+}
+
+.md2-calendar-year {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+
+  &.selected {
+    color: $primary;
+    font-size: 26px;
+    font-weight: 500;
+  }
+}
+
+.md2-datepicker-actions {
+  text-align: right;
+
+  .md2-button {
+    display: inline-block;
+    min-width: 64px;
+    margin: 4px 8px 8px 0;
+    padding: 0 12px;
+    font-size: 14px;
+    color: $primary;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    &:hover {
+      background: darken(white, 8);
+    }
+  }
+}
+.md2-select-underline {
+  height:2px !important;
+}
+[md2-menu-item] [md2-menu-content] {
+  left: 100% !important;
+  right:auto !important;
+  margin: -8px 0;
+}
+[md2-menu-content][x-position=before] {
+  transform-origin: left top !important;
 }
 //media css for tablet screen
 @media(max-width:768px) {
@@ -651,6 +933,955 @@ mat-checkbox-anim-unchecked-checked .md-ink-ripple {
     }
   }
 }
+//md2 elements
+// Variables
+$white: #ffffff !default;
+$black: #000000 !default;
+$bg-color: darken($white, 3);
+$primary: $orange-color;
+$secondary: #ff6a00;
+
+// Fonts
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+// Common
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+.md2-input {
+  max-width: 100%;
+  margin: 8px 0;
+  line-height: 26px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background: transparent;
+
+  &:focus {
+    margin-bottom: 7px;
+    border-bottom: 2px solid $primary;
+    outline: none;
+  }
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: darken($primary, 3);
+    text-decoration: underline;
+  }
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 0;
+  border-top: 1px solid rgba($black, 0.12);
+}
+
+[button] {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  background: transparent;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0 16px;
+  margin: 6px 8px;
+  min-width: 88px;
+  line-height: 36px;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 5px 0 rgba($black, 0.26);
+  color: rgba($black, 0.9);
+  background-color: #fafafa;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.8;
+    box-shadow: none;
+  }
+
+  &[button='primary'] {
+    color: $white;
+    background: $primary;
+  }
+
+  &[class*='block'] {
+    width: 100%;
+  }
+
+  &[class*='large'] {
+    font-size: 16px;
+    padding: 0 12px;
+    min-width: 128px;
+    line-height: 48px;
+    border-radius: 4px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+label.checkbox {
+  display: block;
+  margin-top: 4px;
+  user-select: none;
+  white-space: nowrap;
+  font-size: 16px;
+  cursor: pointer;
+
+  .checkbox-handle {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    vertical-align: text-top;
+    border: 2px solid rgba(black, 0.7);
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: 240ms;
+  }
+
+  input[type=checkbox] {
+    display: none;
+
+    &:checked + .checkbox-handle {
+      transform: rotate(-45deg);
+      height: 8px;
+      border-width: 0 0 2px 2px;
+      border-color: #2196f3;
+    }
+  }
+}
+
+label.radio {
+  display: block;
+  margin-top: 4px;
+  user-select: none;
+  white-space: nowrap;
+  font-size: 16px;
+  cursor: pointer;
+
+  .radio-handle {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: text-top;
+    border: 2px solid rgba(black, 0.54);
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: 240ms;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      display: block;
+      border-radius: 50%;
+      background: #2196f3;
+      transform: scale(0);
+      transition: 240ms;
+    }
+  }
+
+  input[type=radio] {
+    display: none;
+
+    &:checked + .radio-handle {
+      border-color: #2196f3;
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+// Layout
+html, body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: rgba($black, 0.7);
+  background-color: $white;
+  -webkit-tap-highlight-color: $white;
+  -webkit-touch-callout: none;
+}
+
+.loading-demo {
+  display: block;
+  padding: 100px 16px 0;
+  box-sizing: border-box;
+  background-color: $primary;
+  height: 256px;
+  color: $white;
+
+  h1 {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 48px;
+    font-weight: 400;
+  }
+
+  h4 {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 767px) {
+  .loading-demo {
+    padding: 100px 16px 0;
+    height: 256px;
+
+    h1 {
+      width: 100%;
+      font-size: 32px;
+    }
+
+    h4 {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+}
+
+.sidenav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($black, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: $white;
+  z-index: 999;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba($black, 0.3);
+  transition: 300ms ease-in-out;
+
+  &:hover {
+    overflow-y: auto;
+  }
+
+  .sidenav-container {
+    width: 280px;
+    padding: 10px 0;
+  }
+
+  header {
+    padding: 0 16px;
+    border-bottom: 1px solid rgba($black, 0.12);
+    text-align: center;
+
+    a,
+    a:hover,
+    a:focus,
+    a:active,
+    a:visited {
+      color: $primary;
+      text-decoration: none;
+    }
+
+    img {
+      max-height: 100px;
+    }
+
+    h3 {
+      white-space: nowrap;
+    }
+  }
+
+  ul {
+    display: block;
+    margin: 0;
+    padding: 3px 0;
+
+    li {
+      display: block;
+
+      a {
+        display: block;
+        color: rgba($black, 0.6);
+        font-size: 16px;
+        padding: 8px 16px 8px 10px;
+        text-decoration: none;
+        border-left: 6px solid transparent;
+
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: none;
+          background: rgba($black, 0.1);
+        }
+      }
+
+      &.active {
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+          border-left-color: $primary;
+          background: rgba($black, 0.15);
+        }
+      }
+    }
+  }
+}
+
+.main {
+  position: relative;
+  margin-left: 280px;
+  padding: 60px 30px 130px;
+  min-height: 100%;
+  box-sizing: border-box;
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 30px;
+    color: $white;
+    background: rgba($primary, 0.9);
+    box-shadow: 0 1px 8px rgba($black, 0.3);
+
+    .sidenav-toggle {
+      position: relative;
+      float: left;
+      display: none;
+      outline: none;
+      padding: 16px;
+      margin: 4px 0 0 -16px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 16px;
+      color: $white;
+      line-height: normal;
+      cursor: pointer;
+      box-shadow: none;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 16px 0;
+      line-height: 28px;
+    }
+
+    .right-nav {
+      margin-right: -30px;
+    }
+
+    .source-code {
+      margin-right: 16px;
+      fill: currentColor;
+      color: $white;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 96px;
+    margin-top: 30px;
+    background: $primary;
+    color: $white;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .footer-container {
+      width: 100%;
+      height: 100%;
+      padding: 0 30px;
+      box-sizing: border-box;
+    }
+
+    a {
+      width: 50%;
+      height: 100%;
+      padding-top: 24px;
+      float: left;
+      color: rgba($white, 0.87);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      cursor: pointer;
+      box-sizing: border-box;
+
+      &:hover,
+      &:focus {
+        color: $white;
+        text-decoration: none;
+      }
+
+      .material-icons {
+        float: left;
+        margin-right: 10px;
+        padding-top: 23px;
+        width: 24px;
+      }
+
+      .direction {
+        margin-bottom: 1px;
+        font-size: 15px;
+        line-height: 18px;
+        color: rgba($white, 0.55);
+      }
+
+      &.right {
+        float: right;
+        text-align: right;
+
+        .material-icons {
+          float: right;
+          margin-right: 0;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.table-card {
+  .content {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidenav-backdrop.open {
+    display: block;
+  }
+
+  .sidenav {
+    overflow-y: auto;
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 60px 15px 100px;
+
+    .toolbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 0 15px;
+      z-index: 111;
+      box-sizing: border-box;
+
+      .sidenav-toggle {
+        display: block;
+      }
+
+      .right-nav {
+        margin-right: -15px;
+      }
+    }
+
+    .footer {
+      height: 56px;
+
+      .footer-container {
+        padding: 0 15px;
+      }
+
+      a {
+        padding-top: 18px;
+
+        .material-icons {
+          padding-top: 0;
+        }
+
+        .direction {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+$primary: #106cc8 !default;
+
+md2-accordion {
+  display: block;
+}
+
+md2-accordion-tab {
+  position: relative;
+  display: block;
+  outline: 0;
+  box-sizing: border-box;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.md2-accordion-header {
+  position: relative;
+  display: block;
+  padding-right: 30px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: rgba(black, 0.87);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(black, 0.12);
+  border-radius: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: Verdana;
+
+  span {
+    font-family: Verdana;
+  }
+
+  md2-accordion-tab.md2-accordion-tab-active > & {
+    border-color: $primary;
+    box-shadow: 0 1px 0 $primary;
+  }
+
+  md2-accordion-tab.md2-accordion-tab-disabled > & {
+    pointer-events: none;
+    color: rgba(black, 0.26);
+    background-image: linear-gradient(to right, rgba(black, 0.26) 0, rgba(black, 0.26) 33%, transparent 0);
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+    border-color: transparent;
+    box-shadow: none;
+    cursor: default;
+  }
+}
+
+.md2-accordion-header-icon {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+  display: inline-block;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: currentColor;
+  opacity: 0.64;
+  transform: rotate(45deg);
+  transition: 300ms ease-in-out;
+
+  md2-accordion-tab.md2-accordion-tab-active > .md2-accordion-header > & {
+    transform: rotate(225deg);
+    top: 16px;
+  }
+}
+
+.md2-accordion-tab-body {
+  position: relative;
+  overflow: hidden;
+
+  md2-accordion-tab.md2-accordion-tab-active & {
+    overflow: visible;
+  }
+}
+
+.md2-accordion-tab-content {
+  position: relative;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(black, 0.12);
+  font-family: Verdana;
+}
+//md2 autocomplete
+
+$warn: #f44336 !default;
+
+md2-autocomplete {
+  position: relative;
+  display: block;
+  margin: 18px 0;
+  outline: none;
+  user-select: none;
+  backface-visibility: hidden;
+}
+
+md2-autocomplete.md2-autocomplete-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.md2-autocomplete-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 2px 2px 1px;
+  border-bottom: 1px solid rgba(black, 0.12);
+  box-sizing: border-box;
+  min-width: 64px;
+  min-height: 26px;
+  cursor: pointer;
+
+  &.is-focused {
+    padding-bottom: 0;
+    border-bottom: 2px solid $primary;
+  }
+
+  md2-autocomplete.ng-invalid.ng-touched:not(.md2-autocomplete-disabled) & {
+    color: $warn;
+    border-bottom-color: $warn;
+  }
+}
+
+md2-autocomplete.md2-autocomplete-disabled .md2-autocomplete-trigger {
+  color: rgba(black, 0.38);
+  border-color: transparent;
+  background-image: linear-gradient(to right, rgba(black, 0.38) 0%, rgba(black, 0.38) 33%, transparent 0%);
+  background-position: bottom -1px left 0;
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+  cursor: default;
+
+  &.is-focused {
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+  }
+}
+
+.md2-autocomplete-input {
+  width: 100%;
+  height: 26px;
+  font-size: 15px;
+  outline: none;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+}
+
+md2-autocomplete.md2-autocomplete-disabled .md2-autocomplete-input {
+  color: rgba(black, 0.38);
+}
+
+.md2-autocomplete-placeholder {
+  position: absolute;
+  right: 26px;
+  bottom: 100%;
+  left: 0;
+  max-width: 100%;
+  padding-left: 3px;
+  padding-right: 0;
+  line-height: 1.4;
+  color: rgba(black, 0.38);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate3d(0, 26px, 0) scale(1);
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform-origin: left top;
+
+  [aria-required=true] &::after {
+    content: '*';
+  }
+}
+
+.md2-autocomplete-trigger.is-focused .md2-autocomplete-placeholder {
+  color: $primary;
+}
+
+.md2-autocomplete-trigger.is-focused .md2-autocomplete-placeholder,
+md2-autocomplete .md2-autocomplete-placeholder.has-value {
+  transform: translate3d(0, 6px, 0) scale(0.75);
+}
+
+.md2-autocomplete-trigger svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  background: white;
+  fill: currentColor;
+  color: rgba(black, 0.54);
+}
+
+.md2-autocomplete-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  z-index: 10;
+  width: 100%;
+  margin: 0;
+  padding: 8px 0;
+  box-shadow: 0 1px 3px 0 rgba(black, 0.2), 0 1px 1px 0 rgba(black, 0.14), 0 2px 1px -1px rgba(black, 0.12);
+  max-height: 256px;
+  min-height: 48px;
+  overflow-y: auto;
+  background: white;
+}
+
+.md2-autocomplete-menu .md2-option {
+  position: relative;
+  display: block;
+  color: lighten(black, 13);
+  cursor: pointer;
+  width: auto;
+  padding: 0 16px;
+  height: 48px;
+  line-height: 48px;
+  transition: background 150ms linear;
+}
+
+.md2-autocomplete-menu .md2-option:hover,
+.md2-autocomplete-menu .md2-option.focus {
+  background: darken(white, 7);
+}
+
+.md2-autocomplete-menu .md2-option .md2-text {
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+
+.md2-autocomplete-menu .highlight {
+  color: lighten(black, 45);
+}
+//md2 chips
+.template-content {
+  display: inline;
+}
+
+md2-chips {
+  outline: none;
+
+  .md2-chips-container {
+    display: block;
+    box-shadow: 0 1px #ccc;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    min-height: 50px;
+    box-sizing: border-box;
+    clear: both;
+  }
+
+  .md2-chips-container::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  &.chip-input-focus .md2-chips-container {
+    box-shadow: 0 2px #0d8bff;
+  }
+
+  .md2-chip-disabled {
+    cursor: default;
+  }
+
+  md2-autocomplete {
+    margin: 0;
+  }
+
+  .md2-autocomplete-wrap {
+    border-bottom: 0 !important;
+  }
+}
+
+.md2-chip-remove {
+  .md2-chip {
+    padding: 0 12px;
+  }
+}
+
+.md2-chip {
+  font-size: 14px;
+  position: relative;
+  cursor: default;
+  border-radius: 16px;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  margin: 8px 8px 0 0;
+  padding: 0 28px 0 12px;
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100%;
+  background: rgb(224, 224, 224);
+  color: rgb(66, 66, 66);
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+
+  &.active {
+    color: white;
+    background: #0d8bff;
+
+    svg {
+      color: rgba(white, 0.87);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    fill: currentColor;
+    color: rgba(black, 0.54);
+  }
+}
+
+.md2-template {
+  display: none;
+}
+
+.chip-input-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.chip-input-form {
+  display: inline-block;
+  height: 32px;
+  margin: 8px 8px 0 0;
+}
+
+.chip-remove {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 3px;
+  color: #616161;
+  font-size: 30px;
+  vertical-align: top;
+  line-height: 21px;
+  font-family: serif;
+}
+
+.chip-input {
+  display: inline-block;
+  width: auto;
+  border: 0;
+  outline: none;
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  background: transparent;
+}
+
+.chip-error {
+  font-size: 13px;
+  color: #fd0f0f;
+}
+
+.md2-chips-container {
+  .chip-input-form .md2-autocomplete-wrap {
+    border-bottom: 0;
+  }
+
+  .md2-autocomplete-wrap {
+    &.is-focused .md2-autocomplete-placeholder {
+      display: none;
+    }
+
+    .md2-autocomplete-placeholder.has-value {
+      display: none;
+    }
+
+    svg {
+      display: none;
+    }
+
+    .md2-autocomplete-input {
+      height: 32px;
+      font-size: 16px;
+    }
+  }
+}
+
 //media css for mobile screen
 @media(max-width:480px) {
   .panel-header {
@@ -668,6 +1899,7 @@ mat-checkbox-anim-unchecked-checked .md-ink-ripple {
     }
   }
 }
+
 //media css for tablet screen
 @media(min-width:768px) {
   .wrapper {

@@ -1,0 +1,30 @@
+<!--collapse elements-->
+<div class="demo-collapse">
+  <!--collapse Title elements-->
+  <h1>Collapse</h1>
+  <hr />
+  <div>
+    <!--collapse Button elements-->
+    <button type="button" button="primary" (click)="_isCollapsedContent = !_isCollapsedContent">
+      Show / Hide Content (Toggle collapse)
+    </button>
+    <hr>
+    <!--collapse  elements-->
+    <div [collapse]="_isCollapsedContent" class="card card-block card-header">
+      <div class="well well-lg">
+        HTML content goes here !
+        <b>bold text</b> <br>
+        <span>this is a collapse example</span>
+      </div>
+    </div>
+    <!--collapse elements-->
+    <h3>Angular 2 Collapse HTML Content (IMAGE)</h3>
+    <button type="button" button="primary" (click)="_isCollapsedImage = !_isCollapsedImage">
+      Show / Hide Image (Toggle collapse)
+    </button>
+    <hr>
+    <div [collapse]="_isCollapsedImage" class="card card-block card-header">
+      Collapsed content 2
+    </div>
+  </div>
+</div>

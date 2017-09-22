@@ -1,0 +1,45 @@
+<!--data table elements-->
+<div class="demo-data-table">
+  <h1>Data Table</h1>
+  <hr />
+  <!--datatable card elements-->
+  <div class="card table-card">
+    <!--datatable Header elements-->
+    <div class="header">
+      <h3 class="title">Basic Data Table</h3>
+    </div>
+    <!--datatable Content elements-->
+    <div class="content">
+      <table [md2Data]="data | dataPipe : search" #md2="md2DataTable" [rowsPerPage]="10">
+        <thead>
+          <tr>
+            <td colspan="4">
+              <input placeholder="Filter By Name" class="md2-input" [(ngModel)]="search" />
+            </td>
+          </tr>
+          <tr>
+            <th style="width: 20%" md2SortBy="name">Name</th>
+            <th style="width: 50%" md2SortBy="email">Email</th>
+            <th style="width: 10%" md2SortBy="age">Age</th>
+            <th style="width: 20%" md2SortBy="city">City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nidhi Bhatt</td>
+            <td>bnids4@gmail.com</td>
+            <td>23</td>
+            <td>Vadodara</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <md2-pagination [rowsPerPageSet]="[5,10,15]" paginationLabel="Rows per page"></md2-pagination>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
